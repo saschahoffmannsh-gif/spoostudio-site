@@ -1,0 +1,218 @@
+@font-face{
+  font-family:"Fredoka";
+  src:url("fonts/fredoka.woff2") format("woff2");
+  font-weight:400 600;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Fredoka";
+  src:url("fonts/fredoka-bold.woff2") format("woff2");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
+/* Subfolder pages load this file from ../ or ../../ — rewrite font URLs via HTML? 
+   No: @font-face urls are relative to the CSS file, so fonts/ only works from root.
+   Use absolute-from-css-directory is styles.css in root, so we need fonts relative to CSS:
+   url("fonts/fredoka.woff2") works only when CSS is at site root, which it is.
+   CSS url() is relative to the stylesheet URL, not the HTML. Good. */
+
+:root{
+  --navy:#0d1019;
+  --navy-2:#141925;
+  --navy-3:#1b2030;
+  --ink:#0b0a16;
+  --gold:#ffd25a;
+  --gold-hot:#ffbf2a;
+  --gold-deep:#c97a10;
+  --cream:#fff7e8;
+  --muted:#c9c3e0;
+  --line:#3d3c63;
+  --card:#16182a;
+  --ok:#9df25a;
+  --warn:#ffb84d;
+  --comic:"Fredoka",ui-rounded,"SF Pro Rounded",system-ui,sans-serif;
+  --shadow:0 14px 30px #000b;
+  --ring:2px 0 0 var(--ink),-2px 0 0 var(--ink),0 2px 0 var(--ink),0 -2px 0 var(--ink),0 4px 0 #3a1a05;
+  --max:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:var(--navy);color:var(--cream);font-family:var(--comic)}
+body{
+  min-height:100dvh;
+  background:
+    radial-gradient(1200px 600px at 50% -10%,#ffd25a22,transparent 60%),
+    radial-gradient(800px 500px at 110% 20%,#38ccff14,transparent 50%),
+    radial-gradient(700px 500px at -10% 80%,#926ae226,transparent 55%),
+    linear-gradient(180deg,#141925,#0d1019 45%,#11101b);
+  line-height:1.5;
+}
+body::before{
+  content:"";
+  pointer-events:none;
+  position:fixed;inset:0;
+  background-image:radial-gradient(#ffffff14 1px,transparent 1px);
+  background-size:22px 22px;
+  mask-image:linear-gradient(180deg,#000 0,transparent 80%);
+  opacity:.35;
+  z-index:0;
+}
+a{color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:#ffe8a3}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{
+  position:absolute;left:-999px;top:8px;
+  background:var(--gold);color:var(--ink);padding:8px 14px;border-radius:12px;font-weight:700;z-index:20;
+}
+.skip:focus{left:8px}
+
+.wrap{position:relative;z-index:1;width:min(var(--max),calc(100% - 32px));margin:0 auto}
+.site-header,.site-footer{position:relative;z-index:2}
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 0 8px;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream)}
+.brand img{width:44px;height:44px;border-radius:12px;box-shadow:0 0 0 2px #0b0a16,0 0 0 4px #ffd25a66,0 6px 16px #0008;background:#062033}
+.brand-name{font-weight:700;font-size:1.15rem;letter-spacing:.01em;line-height:1.05}
+.brand-name small{display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-shadow:0 1px 0 #6a3304}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav a, .lang a, .btn, .chip-link{
+  font-weight:700;
+}
+.nav-link{
+  color:var(--cream);text-decoration:none;padding:8px 12px;border-radius:999px;
+}
+.nav-link:hover{background:#ffffff12;color:#fff}
+.lang{
+  display:flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden;
+  background:#0b0b18;box-shadow:0 3px 0 var(--ink);
+}
+.lang a{
+  color:#fff7e8;text-decoration:none;padding:6px 11px;font-size:.9rem;background:transparent;
+}
+.lang a[aria-current="true"]{background:linear-gradient(180deg,#ffd96a,#f5a623 58%,#c97a10);color:var(--ink);text-shadow:0 1px 0 #fff6}
+.hero{padding:28px 0 12px;text-align:center}
+.kicker{
+  display:inline-block;margin:0 0 10px;padding:6px 12px;border-radius:999px;
+  background:#0b0b18b8;border:1.5px solid #5a5a9a;color:var(--gold);
+  font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+}
+h1,h2,h3{font-weight:700;line-height:1.1;margin:0 0 .5em}
+h1{
+  font-size:clamp(2.4rem,9vw,4.4rem);
+  color:var(--gold);
+  text-shadow:var(--ring);
+  letter-spacing:.01em;
+}
+.lede{max-width:34rem;margin:0 auto 1.6rem;color:var(--muted);font-size:1.15rem}
+
+.game-card{
+  display:grid;grid-template-columns:1fr;gap:22px;align-items:center;
+  margin:8px auto 48px;padding:22px 20px 24px;
+  background:
+    linear-gradient(180deg,#1c2033,#12141f 70%);
+  border:3px solid var(--ink);
+  border-radius:28px;
+  box-shadow:inset 0 2px 0 #ffffff22,inset 0 0 0 3px #ffd25a55,0 4px 0 #0b0a16,var(--shadow);
+  text-align:left;
+}
+@media (min-width:720px){
+  .game-card{grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);padding:28px 32px;gap:32px}
+}
+.logo-wrap{display:flex;justify-content:center;align-items:center;padding:8px}
+.logo-wrap img,.logo-wrap picture{width:min(100%,420px);height:auto;filter:drop-shadow(0 8px 0 #0006)}
+.game-copy h2{
+  font-size:clamp(1.6rem,4vw,2.2rem);color:var(--gold);text-shadow:0 2px 0 #6a3304;
+}
+.game-copy p{margin:0 0 1rem;color:#efe9ff}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 10px;border-radius:999px;background:#0b0b18b8;border:1.5px solid #5a5a9a;
+  color:var(--gold);font-size:.82rem;font-weight:700;
+}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{
+  appearance:none;border:2px solid var(--ink);border-radius:18px;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 18px;text-decoration:none;font-size:1.05rem;
+  color:#fff;text-shadow:0 1.5px 0 #6a3304;
+  background:linear-gradient(180deg,#ffd96a,#f5a623 58%,#c97a10);
+  box-shadow:inset 0 2px 0 #ffffffa0,inset 0 -4px 0 #00000030,0 4px 0 var(--ink);
+}
+.btn:hover{filter:brightness(1.06);color:#fff}
+.btn:active{transform:translateY(2px);box-shadow:inset 0 2px 0 #ffffffa0,inset 0 -2px 0 #00000030,0 1px 0 var(--ink)}
+.btn-ghost{
+  background:linear-gradient(180deg,#3a3960,#22213c);
+  text-shadow:0 1.5px 0 #14152e;
+  box-shadow:inset 0 2px 0 #b8b4e04d,inset 0 -4px 0 #15142a,0 4px 0 var(--ink);
+  color:#fff;
+}
+.btn-ghost:hover{color:#fff}
+
+.site-footer{
+  margin-top:24px;padding:28px 0 40px;color:var(--muted);font-size:.95rem;
+  border-top:2px solid #ffffff14;
+}
+.foot-row{display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:space-between;align-items:flex-start}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+.foot-links a{color:#ffe8a3;text-decoration:none;font-weight:700}
+.foot-links a:hover{text-decoration:underline}
+
+/* Legal / article pages */
+.page{padding:12px 0 48px}
+.crumb{margin:0 0 14px;color:var(--muted);font-size:.92rem}
+.crumb a{color:#ffe8a3;text-decoration:none;font-weight:700}
+.page h1{font-size:clamp(1.8rem,6vw,3rem);margin-bottom:.35em}
+.sub{color:var(--muted);margin:0 0 1.2rem}
+.article{
+  background:linear-gradient(180deg,#1a1d2e,#12141f);
+  border:3px solid var(--ink);border-radius:24px;
+  box-shadow:inset 0 2px 0 #ffffff18,0 4px 0 var(--ink),var(--shadow);
+  padding:22px 20px 32px;
+}
+@media (min-width:720px){.article{padding:32px 40px 40px}}
+.article h2{
+  color:var(--gold);text-shadow:0 2px 0 #6a3304;font-size:1.35rem;margin:1.4em 0 .4em
+}
+.article h2:first-child{margin-top:.2em}
+.article h3{color:#ffe8a3;font-size:1.05rem;margin:1.1em 0 .3em}
+.article p,.article li{color:#efe9ff}
+.article ul,.article ol{padding-left:1.2em}
+.article li{margin:.35em 0}
+.article hr{border:0;border-top:2px solid #ffffff14;margin:2em 0}
+
+.placeholder{
+  display:inline-block;padding:1px 8px;margin:0 1px;
+  border:2px dashed #ffd25a;border-radius:10px;
+  background:#ffd25a22;color:#ffe8a3;font-weight:700;white-space:nowrap;
+}
+.note,.todo{
+  border-radius:16px;padding:12px 14px;margin:1rem 0;
+  border:2px solid var(--ink);
+}
+.note{background:#1e2a18;border-color:#3d6a22;color:#d8f5c2}
+.todo{background:#2a2210;border-color:#b8861a;color:#ffe6b0}
+.note strong,.todo strong{color:#fff;display:block;margin-bottom:.25rem}
+.meta{font-size:.92rem;color:var(--muted)}
+
+.faq details{
+  background:#0b0b18;border:2px solid #3d3c63;border-radius:16px;padding:4px 14px;
+  margin:0 0 10px;
+}
+.faq summary{
+  cursor:pointer;font-weight:700;color:var(--gold);padding:12px 0;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";float:right;color:#ffe8a3}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:.1rem 0 14px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn:active{transform:none}
+}

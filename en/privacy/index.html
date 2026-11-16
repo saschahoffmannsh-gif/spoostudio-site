@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy – Squish Attack – Spoo Studio</title>
+  <meta name="description" content="Privacy policy for Squish Attack (app and web version) by Spoo Studio.">
+  <link rel="canonical" href="https://spoostudio.de/en/privacy/">
+  <link rel="alternate" hreflang="de" href="https://spoostudio.de/squish-attack/datenschutz/">
+  <link rel="alternate" hreflang="en" href="https://spoostudio.de/en/privacy/">
+  <meta name="theme-color" content="#0d1019">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32.png">
+  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="../">
+      <img src="../../images/icon-192.png" width="44" height="44" alt="">
+      <span class="brand-name">Spoo Studio<small>games</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="../support/">Support</a>
+      <a class="nav-link" href="./" aria-current="page">Privacy</a>
+      <a class="nav-link" href="../imprint/">Imprint</a>
+      <div class="lang" role="navigation" aria-label="Language">
+        <a href="../../squish-attack/datenschutz/" lang="de" hreflang="de">DE</a>
+        <a href="./" aria-current="true" lang="en">EN</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content" class="wrap page">
+    <p class="crumb"><a href="../">Spoo Studio</a> · Squish Attack · Privacy</p>
+    <h1>Privacy policy for Squish Attack</h1>
+    <p class="sub">Last updated: 16 November 2026. This notice describes the current technical behaviour of Squish Attack in the iOS app and in the web version. It is not legal advice. Yellow fields and call-outs still need to be completed or reviewed. The German text at <a href="../../squish-attack/datenschutz/">spoostudio.de/squish-attack/datenschutz</a> is the primary version.</p>
+
+    <article class="article">
+      <div class="note">
+        <strong>In short</strong>
+        You play without an account, without a name and without an email address. We store a random device token and your progress. The iPhone app shows Google AdMob ads, and we ask for consent first. Optionally you can buy ad-free once through the App Store. There is no Game Center and no Sign in with Apple or Google.
+      </div>
+
+      <h2>1. Controller</h2>
+      <p>
+        <span class="placeholder">[First name Last name]</span>,
+        <span class="placeholder">[Street no.]</span>,
+        <span class="placeholder">[Postcode City]</span>,
+        email: <span class="placeholder">[Email address]</span>.
+        Further details are in the <a href="../imprint/">imprint</a>.
+      </p>
+
+      <h2>2. What data we process</h2>
+      <h3>Anonymous player token</h3>
+      <p>When you first start the game, your device creates a random token. It stays on your device (in the browser’s local storage; in the iPhone app also in the iOS keychain, with local storage as a fallback). Our server only stores a one-way value derived from it (SHA-256). That value cannot be turned back into an identity. We do not collect your name, email or Apple ID.</p>
+
+      <h3>Save data and progress</h3>
+      <p>So your progress can be backed up and restored on the same device, we store:</p>
+      <ul>
+        <li>unlocked levels, stars and best move counts</li>
+        <li>your endless-mode score</li>
+        <li>the endless-mode tool inventory (rocket and wand)</li>
+      </ul>
+      <p>In adventure mode each tool can be used once per attempt and refills on retry; tools do not accumulate. The saved record may still include inventory fields because that is how the current save format works.</p>
+
+      <h3>Local tool log (test feature)</h3>
+      <p>Settings include a tool-stats screen. It keeps a log on your device of when and where you used tools. You can export or delete it yourself. It is not sent to us automatically.</p>
+
+      <h3>Duel</h3>
+      <p>For the duration of a duel we store both players’ game state. Duel rooms are deleted after one hour at most.</p>
+
+      <h3>Technical data for abuse protection</h3>
+      <p>To limit request rates we process your IP address. What we store is only a shortened, salted SHA-256 prefix, which is deleted after two days at most.</p>
+
+      <h2>3. Purpose and legal basis</h2>
+      <p>The following legal bases are a draft and should be reviewed before the App Store release:</p>
+      <ul>
+        <li>Providing the game, progress and duels: Art. 6(1)(b) GDPR (use of the game) and (f) (legitimate interest in a working, fair game).</li>
+        <li>Abuse protection: Art. 6(1)(f) GDPR.</li>
+        <li>Personalised advertising and tracking: only with your consent, Art. 6(1)(a) GDPR and § 25(1) TDDDG. Without consent the app shows non-personalised ads, relying on Art. 6(1)(f) GDPR, because ads fund the free game.</li>
+      </ul>
+
+      <h2>4. Retention</h2>
+      <ul>
+        <li>Endless-mode cloud saves are deleted if they have not been used for 90 days.</li>
+        <li>Adventure progress in the cloud (levels, stars, inventories): there is currently no automatic deletion. The final retention period is still to be decided.</li>
+        <li>Duel rooms: at most 1 hour after the last change.</li>
+        <li>Hashed IP values: at most 2 days.</li>
+        <li>Data on your device: until you delete the app or the site data. The iPhone keychain entry can survive a reinstall, so the cloud save can be found again.</li>
+      </ul>
+      <div class="todo">
+        <strong>Still open</strong>
+        The database still holds an older leaderboard from the web version. It is turned off in the game. Whether and when those rows are deleted has not been decided. Individual entries can be removed on request once a contact address is in place.
+      </div>
+
+      <h2>5. Recipients and processors</h2>
+      <ul>
+        <li><strong>Supabase</strong> (Supabase Inc.) for the database and server function. According to our technical documentation the project is in region eu-central-1 (Frankfurt am Main, EU).</li>
+        <li><strong>Google AdMob</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland) in the iPhone app only, for advertising. Google may process device identifiers (for example the advertising ID, only with your permission), IP address, approximate location and ad interactions, including in the United States (EU-US Data Privacy Framework). More: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>. The web version does not load Google’s ads SDK.</li>
+        <li><strong>Apple</strong> for the App Store and the one-time ad-free purchase via StoreKit, and for the iOS keychain. Payment is handled by Apple; we do not receive card details. Apple’s terms apply.</li>
+        <li><strong>GitHub Pages</strong> (GitHub Inc.) for this website and the web version of the game. When you visit, GitHub processes your IP address in server logs.</li>
+      </ul>
+      <div class="todo">
+        <strong>Still to confirm</strong>
+        Whether the Supabase Data Processing Addendum (DPA) has already been accepted in the dashboard is not recorded here as a fact. That should be checked and this section updated before publication.
+      </div>
+      <p>There is no Game Center. Sign in with Apple or Google is not built in at present.</p>
+
+      <h2>6. Advertising and consent (iPhone app only)</h2>
+      <p>On first launch we first show Google’s consent form (UMP) to ask whether personalised ads are allowed. After that, Apple asks whether apps may track you across apps (ATT). If you decline, there is no advertising ID (IDFA); ads may still appear, without personalisation via that ID.</p>
+      <p>You can change this later: in iOS Settings under Privacy → Tracking, and, when Google requires it, in the game settings via “Change ad consent” / “Werbe-Einwilligung ändern”.</p>
+
+      <h2>7. Ad-free purchase (iPhone app only)</h2>
+      <p>In the iPhone app you can buy ad-free once. The product ID is <code>squish.adfree</code>, the price is €2.99, and it is a non-consumable StoreKit item. The purchase removes ads before tools, the interstitial every five levels, and the endless-mode ad offer (every ten minutes). The “each tool once per attempt” limit and the star rules stay in place. You can bring the purchase back in Settings via “Restore purchases” on a device signed in with the same Apple ID. This purchase does not exist in the web version.</p>
+
+      <h2>8. This website</h2>
+      <p>spoostudio.de is served via GitHub Pages. These pages do not set our own cookies and do not use analytics tools. The host processes your IP address in logs when you visit. Fonts are hosted on this server, not via Google Fonts.</p>
+
+      <h2>9. Your rights</h2>
+      <p>You have the right of access, rectification, erasure, restriction, data portability and objection, and the right to withdraw consent. You may lodge a complaint with a supervisory authority, for example the <span class="placeholder">[competent state authority, depending on the controller’s place of residence]</span>.</p>
+      <div class="todo">
+        <strong>Finding your data</strong>
+        Because we do not know your name and the game does not currently show a visible player ID, there is no self-service lookup yet. Write to the contact address in the imprint; we will then work out how to match your save without you sending us secret device tokens. A visible support ID in the game can be added later.
+      </div>
+
+      <h2>10. Children</h2>
+      <p>The game is not directed at children under 13.</p>
+
+      <h2>11. Changes</h2>
+      <p>We will update this notice if the game changes. Last updated: 16 November 2026.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-row">
+      <p>© 2026 Spoo Studio.</p>
+      <p class="foot-links">
+        <a href="../imprint/">Imprint</a>
+        <a href="./">Privacy</a>
+        <a href="../support/">Support</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
